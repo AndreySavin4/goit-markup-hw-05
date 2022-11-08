@@ -163,7 +163,7 @@ span {
   align-items: center;
   align-self: baseline;
   color: var(--second-color);
-
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -422,7 +422,7 @@ span {
   height: 44px;
   background-color: var(--background-color);
   border-radius: 50%;
-  transition-property: color;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -443,9 +443,6 @@ span {
 .socials-link:focus {
   color: var(--background-color);
   background-color: var(--color-button);
-  transition-property: var(--color-button);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Постоянные Клиенты */
@@ -465,15 +462,21 @@ span {
   gap: 30px;
 }
 
+.clients-link {
+  display: block;
+  width: 170px;
+  height: 92px;
+  border-radius: 4px;
+}
+
 .clients-icon {
   width: 100%;
-  height: 92px;
+  height: 100%;
   padding: 16px 32px;
+  border-radius: inherit;
   fill: #afb1b8;
   border: 1px solid #afb1b8;
-  border-radius: 4px;
-
-  transition-property: var(--color-button);
+  transition-property: fill, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -483,9 +486,6 @@ span {
   fill: var(--color-button);
   border-radius: var(--color-button);
   border-radius: 4px;
-  transition-property: var(--color-button);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover .clients-icon,
@@ -593,14 +593,14 @@ span {
   padding: 6px 22px;
   border: transparent;
   border-radius: 4px;
-  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
   color: var(--main-color);
   background-color: var(--background-color-team);
 
-  transition-property: color,background-color;
+  transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -617,20 +617,29 @@ span {
   gap: 30px;
 }
 
-.project-box {
-  border: 1px solid #eeeeee;
-  border-top: none;
-  padding: 20px 24px;
-}
-
 .project-list {
   flex-basis: calc((100% - 30px * 2) / 3);
 }
 
-.project-list:hover,
-.project-list:focus {
+.project-link {
+  display: block;
+  width: 370px;
+  height: 404px;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-link:hover,
+.project-link:focus::before {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-box{
+  border: 1px solid var(--background-color);
+  border-top: none;
+  padding: 20px 24px;
 }
 
 .project-thumb {
