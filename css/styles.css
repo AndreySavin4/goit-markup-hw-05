@@ -598,19 +598,17 @@ span {
   line-height: 1.62;
   text-align: center;
   color: var(--main-color);
-  background: var(--background-color-team);
+  background-color: var(--background-color-team);
 
-  transition-property: var(--main-color), var(--background-color-team);
+  transition-property: color,background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover,
 .portfolio-button:focus {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--background-color);
-  background: var(--color-button);
+  background-color: var(--color-button);
 }
 
 .project {
